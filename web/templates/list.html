@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+        <h2 id="test">nadpis</h2>
+    <div class="container">
+            <div class="row">
+            {% for recept in recepty %}
+{#                <a href="{%url 'recept-detail' recept.pk%}">#}
+            <div class="col-sm-4 border border-success mb-3 rounded" style="height: 340px;">
+                <img style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin: auto;display: block;"
+                     class="img-fluid h-75"  src="{{ recept.picture.url }}">
+            <p>"{{ recept.name }}"</p>
+            <p>Porce: {{ recept.kcal }} kcal</p>
+            </div>
+{#                </a>#}
+            {% endfor %}
+
+            </div>
+    </div>
+ {% endblock %}

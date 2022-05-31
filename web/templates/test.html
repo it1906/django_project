@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+        {% for recept in recepty %}
+        <div class="col-sm-4">
+            <img style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+  display: block;" id="receptObrazek" class="img-fluid h-75"  src="{{ recept.picture.url }}">
+        </div>
+        {% endfor %}
+
+        </div>
+</div>
+</body>
+</html>
