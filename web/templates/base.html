@@ -2,7 +2,7 @@
 <html lang="cs">
 
 <head>
-  <title>Jan Hadamčík - Kalorický web</title>
+  <title >Jan Hadamčík - Kalorický web</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,12 +10,14 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100" style="font-family:'Roboto', sans-serif;">
     <header class="shadow-sm p-3 mb-5 bg-secondary">
         {% block header %}
             {% include "blocks/navbar.html" %}
@@ -46,6 +48,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
+{#<script>#}
+{#    $(".nav .nav-link").on("click", function(){#}
+{#    $(".nav").find(".active").removeClass("active");#}
+{#   $(this).addClass("active");#}
+{#});#}
+{#</script>#}
 </body>
 
 </html>

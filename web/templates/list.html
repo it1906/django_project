@@ -2,20 +2,27 @@
 {% load static %}
 
 {% block content %}
-        <h2 id="test">nadpis</h2>
+        <h2 class="text-success">Přehled receptů</h2>
+        <p>Recepty slouží spíše k získání přehledu o kalorické hodnotě určitých jídel. Jídla jsou směšně snadná a těžko se dají považovat za něco, k čemu potřebujete recept.</p>
     <div class="container">
-            <div class="row">
+        <div class="row">
             {% for recept in recepty %}
-{#                <a href="{%url 'recept-detail' recept.pk%}">#}
-            <div class="col-sm-4 border border-success mb-3 rounded" style="height: 340px;">
-                <img style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin: auto;display: block;"
-                     class="img-fluid h-75"  src="{{ recept.picture.url }}">
-            <p>"{{ recept.name }}"</p>
-            <p>Porce: {{ recept.kcal }} kcal</p>
+            <div class="col-sm-4">
+                <div class="shadow-sm mb-2 rounded " style="height:350px;">
+                    <img style="margin: auto;display: block; border-radius: 10px 10px 0 0;"
+                         class="img-fluid h-75 w-100"  src="{{ recept.picture.url }}">
+                    <div class="float-left w-75">
+                        <p class="pl-2 pt-2" >"{{ recept.name }}"</p>
+                        <p class="pl-2">Porce: {{ recept.kcal }} kcal</p>
+                    </div>
+                    <div class="float-right w-25 pt-4 pr-2">
+                        <a href="{% url 'detail' recept.pk %}">
+                            <div class="btn btn-outline-success rounded text-center">Zkusit</div>
+                        </a>
+                    </div>
+                </div>
             </div>
-{#                </a>#}
             {% endfor %}
-
-            </div>
+        </div>
     </div>
  {% endblock %}

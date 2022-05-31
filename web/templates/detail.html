@@ -1,5 +1,35 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-jgkfgsjkdnf
+    <div>
+    <h2 class="text-success">{{ detaily.name }}</h2>
+    <h4 class="text-secondary">{{ detaily.kcal }} kcal na porci</h4>
+        <img style="margin: auto;display: block; border-radius: 10px;"
+          class="img-fluid h-50 w-50 float-left mb-3"  src="{{ detaily.picture.url }}">
+        <div class="float-right w-25 mr-3">
+            <h3>Ingredience</h3>
+        <ul>
+            {% for foodstuff in detaily.foodstuff.all%}
+                <li>{{ foodstuff.name }}</li>
+            {% endfor %}
+        </ul>
+        </div>
+        <div class="float-right w-25 mt-3 mr-3 mb-3">
+        <h3>Postup</h3>
+        {{ detaily.description }}
+    </div>
+    {% if detaily.attachment_set.all %}
+        <div class="float-left w-100">
+            <h3>Obrázky</h3>
+            <div class="row">
+                {% for image in detaily.attachment_set.all %}
+                    <div style="height: 200px;" class="pl-2 mb-3">
+                    <img src="{{ image.file.url }}" class= "img-fluid img-thumbnail h-100">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    </div>
+
 {% endblock %}
